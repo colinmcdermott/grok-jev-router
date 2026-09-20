@@ -1,0 +1,8 @@
+{
+  "task": "Find the current Whop platform fee for digital products and note it in /workspace/research/fees.md",
+  "bot": "Business ops",
+  "proposed_action": {"type": "browser", "summary": "Open whop.com/pricing in the browser and read the fee table", "target": "https://whop.com/pricing"},
+  "attempts": 0,
+  "last_result": "",
+  "notes": "Nothing done yet."
+}

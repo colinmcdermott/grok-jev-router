@@ -1,0 +1,6 @@
+{
+  "enabled": true,
+  "mode": "shadow",
+  "model": "jev-latest",
+  "max_state_chars": 12000
+}

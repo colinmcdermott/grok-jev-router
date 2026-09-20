@@ -1,0 +1,8 @@
+{
+  "task": "Tell me the live URL of the starterpack site",
+  "bot": "Business ops",
+  "proposed_action": {"type": "research", "summary": "Search the web for the site URL", "target": "web"},
+  "attempts": 1,
+  "last_result": "`whop apps get` returned hosted_url https://grok-bot-starterpack.whop.site and the user was told.",
+  "notes": ""
+}

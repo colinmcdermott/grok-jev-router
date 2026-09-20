@@ -1,0 +1,19 @@
+{
+  "department": {
+    "type": "choice",
+    "instructions": "Which starterpack bot should handle this message?",
+    "criteria": {
+      "churn_retention_manager": "cancel, refund, failed payment, unhappy member",
+      "paid_ads_manager": "anything about ads, creatives, spend",
+      "affiliate_program_manager": "affiliate links, commissions, partner terms",
+      "business_ops": "anything else"
+    }
+  },
+  "urgency": {
+    "type": "score",
+    "instructions": "How urgent is this message?",
+    "criteria": ["no time pressure", "wants it soon", "blocked or explicit deadline", "money, legal, or safety at stake"]
+  },
+  "wants_refund": {"type": "noul", "instructions": "Is the person asking for money back?"},
+  "needs_human": {"type": "noul", "instructions": "Should a person read this before any bot replies?"}
+}

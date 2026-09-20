@@ -1,0 +1,8 @@
+{
+  "task": "Deploy the landing page with `whop apps deploy`",
+  "bot": "Landing page generator",
+  "proposed_action": {"type": "retry", "summary": "Run `whop apps deploy` again with the same flags", "target": "app_y3cCF8mdM76Tms"},
+  "attempts": 3,
+  "last_result": "Typecheck failed three times with the same error: Property 'installUrl' does not exist on type 'Bot'.",
+  "notes": "No code change between attempts."
+}
