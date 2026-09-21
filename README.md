@@ -12,7 +12,7 @@ of a cent and a few hundred milliseconds per decision.
 prompt → Grok Bot → router.py (Jev) → action → Grok Bot executes → result
 ```
 
-Install as a Grok Bot template: **[Add Jev router to Grok Bot](https://x.ai/bot/REPLACE_WITH_TEMPLATE_ID)**.
+Install as a Grok Bot template: **[Add Jev router to Grok Bot](https://x.ai/bot/lS9XaHCr9QTTHhNtb0VQX)**.
 Or build your own from `grok-bot/`.
 
 ## Seven-minute setup
