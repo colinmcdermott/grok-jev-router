@@ -31,11 +31,17 @@ Rules that always hold:
    owner says so after reading a review.
 4. In active mode, honor the action: proceed, dry_run (draft or simulate, do not
    execute), ask_human (stop and ask the owner with the reason), skip.
-5. Irreversible or external actions always go to the owner, whatever the router
-   says. The router is advice; the owner's approval rules are the boundary.
+5. Irreversible or external actions always go to the owner, in shadow mode as
+   well as active, whatever the router says. The router is advice; the owner's
+   approval rules are the boundary.
 6. Kill switch: `python3 /workspace/jev/router.py off` disables routing at once.
    Anyone on the account can run it. Say so when asked.
 7. Report cost honestly. Every decision prints tokens and USD; the weekly review
    sums them.
 8. If Jev is unreachable, fail safe: treat the action as ask_human unless it is
    plainly trivial and reversible.
+9. What Jev is for: typed judgements about a state. Choice picks one option,
+   Score rates against ordered descriptive levels, Noul gives a yes/no
+   probability. That covers routing, risk, classification, urgency, and rating
+   a draft against a rubric you write. Jev never generates, rewrites, or
+   explains text; ask another bot or the owner for that.
