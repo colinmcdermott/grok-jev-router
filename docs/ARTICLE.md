@@ -9,7 +9,7 @@ Two days ago I shared a Grok Bot template called Jev router. The replies split i
 
 ## What Jev is, and what it is not
 
-Jev is TypeSafe AI's decision model. You send it a state (any text or JSON) and a set of typed questions. It answers every question at once, in about half a second, and each answer comes with calibrated probabilities and a confidence score.
+Jev is TypeSafe AI's decision model. You send it some text or data and a set of typed questions. It answers every question at once, in about half a second, and each answer comes with calibrated probabilities and a confidence score.
 
 There are exactly three question types:
 
@@ -38,7 +38,7 @@ The template contains no API key, no plugins, and no connectors. Your key lives 
 Jev never talks to your Bots and never forwards anything. The flow is:
 
 1. Your Bot is about to do something, or has something to classify.
-2. It writes a one-page summary as JSON: the task, what it proposes to do, what happened last time.
+2. It writes a one-page summary: the task, what it proposes to do, what happened last time.
 3. It runs the skill, which sends that summary and a set of questions to Jev.
 4. Jev returns typed answers. A small piece of code turns them into one action or one set of labels.
 5. Your Bot acts on the answer. If a specialist Bot is named, your Bot does the hand-off itself.
@@ -119,7 +119,7 @@ There is a second benefit that is easy to miss. Jev does not follow instructions
 Each one needs Jev router installed first, because they use its skills and your key. Until I publish them as templates, the recipe for each is in the source repo under grok-bot/bonus; paste it into a new Bot and it builds itself.
 
 - **Jev inbox triage** labels every inbound message with owner, urgency, refund intent and needs-human, hands it to the right Bot, and posts a daily digest. Never replies to anyone.
-- **Jev content grader** scores a draft or a list of URLs against a rubric you edit in one file, shows the scores with probabilities, and proposes rewrites for the two weakest paragraphs. Never publishes.
+- **Jev content grader** scores a draft or a list of URLs against a rubric you describe to it once, shows the scores with probabilities, and proposes rewrites for the two weakest paragraphs. Never publishes.
 - **Jev ad judge** takes several ad variants plus the landing page, picks the strongest, and flags any claim the page does not support. Never launches.
 
 If you build one and share it as a template, tell me and I will add the link here.
