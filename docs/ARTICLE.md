@@ -25,8 +25,8 @@ Pricing is $0.042 per million input tokens and output is free. A typical call is
 
 Adding the template creates a Bot called Jev router on your account. It does not do work itself. It carries three skills, and skills in Grok Bot are shared across every Bot on your account. That is the answer to "how does this work with my existing bots": once the template is added, your Chief of Staff, your support bot, and every other Bot you have can call these skills directly.
 
-- **jev-setup** runs once. It clones a small open-source repo to the shared computer, asks you to place your TypeSafe API key in a file without ever pasting it into chat, runs a smoke test, and shows you four example decisions.
-- **jev-ask** is the general classifier. Any Bot writes a state and some questions to two small files, runs one command, and gets typed answers back. This is where most of the value is.
+- **jev-setup** runs once. It downloads the open-source code to your Grok Bot computer, asks you to place your TypeSafe API key without ever pasting it into chat, checks the connection, and shows you four example decisions.
+- **jev-ask** is the general classifier. Any Bot on your account can say, in effect, "here is a thing, here are my questions," and get typed answers back in half a second. This is where most of the value is.
 - **jev-usage-router** is a decision gate. Before a Bot opens a browser, retries a failed step, hands work to another Bot, or does anything that sends, pays, publishes, or deletes, it can ask Jev whether to proceed, dry-run, ask you, or skip.
 
 There is also one routine, a Monday morning review of the week's decisions and cost. It is created paused. Nothing runs until you say so.
@@ -39,7 +39,7 @@ Jev never talks to your Bots and never forwards anything. The flow is:
 
 1. Your Bot is about to do something, or has something to classify.
 2. It writes a one-page summary as JSON: the task, what it proposes to do, what happened last time.
-3. It runs the skill, which sends that summary and a fixed question set to Jev.
+3. It runs the skill, which sends that summary and a set of questions to Jev.
 4. Jev returns typed answers. A small piece of code turns them into one action or one set of labels.
 5. Your Bot acts on the answer. If a specialist Bot is named, your Bot does the hand-off itself.
 
@@ -61,7 +61,7 @@ That is the whole setup. Everything stays in shadow mode until you change it.
 
 ## What to use it for
 
-Every example below is one call to jev-ask from any Bot. The question sets live in the repo under examples/ so you can copy and edit them.
+Every example below is one jev-ask call from any Bot. Ready-made question sets for each one ship with the template; tell your Bot which one to use, or describe the questions you want in plain English and it writes them.
 
 **Support triage.** Which bot owns this message, how urgent, is it a refund request, does a human need to see it first. Four questions, one call. The retention bot gets refund requests, the ads bot gets ad questions, and anything with needs_human above 0.6 comes to you.
 
@@ -106,7 +106,7 @@ There is a second benefit that is easy to miss. Jev does not follow instructions
 
 **Does the Jev Bot forward requests to my other Bots?** No. It installs skills. Your existing Bots call Jev themselves and do their own hand-offs.
 
-**Can I change the questions?** Yes. Every question and every threshold lives in one file, jev/questions.py. Change the wording, change the numbers, commit.
+**Can I change the questions?** Yes, by talking to the Bot. "Add a question about whether the customer is a VIP." "Be stricter about anything involving refunds." "Add my new Onboarding Bot to the list of specialists." The Bot edits its own question file and tells you what changed. You never open a file.
 
 **Is this only for routing?** No. Routing is one application. jev-ask is the general tool, and classification and scoring are where most people will get value first.
 
@@ -116,13 +116,13 @@ There is a second benefit that is easy to miss. Jev does not follow instructions
 
 ## Bonus: three more Bots built on Jev
 
-These are creation prompts in the repo under grok-bot/bonus/. Each needs Jev router installed first, because they use its skills and key.
+Each one needs Jev router installed first, because they use its skills and your key. Until I publish them as templates, the recipe for each is in the source repo under grok-bot/bonus; paste it into a new Bot and it builds itself.
 
 - **Jev inbox triage** labels every inbound message with owner, urgency, refund intent and needs-human, hands it to the right Bot, and posts a daily digest. Never replies to anyone.
 - **Jev content grader** scores a draft or a list of URLs against a rubric you edit in one file, shows the scores with probabilities, and proposes rewrites for the two weakest paragraphs. Never publishes.
 - **Jev ad judge** takes several ad variants plus the landing page, picks the strongest, and flags any claim the page does not support. Never launches.
 
-Create any of them by pasting the prompt into a new Bot, then share it as a template. If you publish one, tell me and I will add it to the list.
+If you build one and share it as a template, tell me and I will add the link here.
 
 ## Links
 
