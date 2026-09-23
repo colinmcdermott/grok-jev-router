@@ -1,0 +1,24 @@
+{
+  "answer_first": {
+    "type": "score",
+    "instructions": "Does the piece deliver its promise directly and early, before background and preamble?",
+    "criteria": ["buried: several paragraphs before any answer", "late: arrives after an introduction that could be cut", "early: the opening gives the answer, the body expands it", "leads with it: the first paragraph states the answer in a quotable form"]
+  },
+  "evidence": {
+    "type": "score",
+    "instructions": "How well are the claims supported?",
+    "criteria": ["unsupported assertions throughout", "occasional numbers or examples, unsourced", "regular specifics: numbers, dates, named examples", "well sourced: claims tied to named sources or links"]
+  },
+  "actionable": {
+    "type": "score",
+    "instructions": "Could a reader act on this?",
+    "criteria": ["nothing to act on", "general advice without specifics", "concrete steps for the common case", "exact steps, numbers, tools, and what to do when it fails"]
+  },
+  "sales_pressure": {
+    "type": "score",
+    "instructions": "How much does the piece exist to sell rather than to help?",
+    "criteria": ["none", "light: one natural mention or call to action", "present: several mentions, reader still gets a full answer", "central: organised around the product's features", "advertisement: little value unless the reader signs up"]
+  },
+  "on_brand": {"type": "noul", "instructions": "Does the writing match the brand voice described in the state?"},
+  "filler_opening": {"type": "noul", "instructions": "Is the first paragraph generic filler that could open any article on the topic?"}
+}

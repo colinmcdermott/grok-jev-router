@@ -1,0 +1,15 @@
+{
+  "best": {
+    "type": "choice",
+    "instructions": "Which ad variant is most likely to get the described audience to click and then not feel misled on the landing page?",
+    "criteria": {"A": "variant A", "B": "variant B", "C": "variant C"}
+  },
+  "hook": {
+    "type": "score",
+    "instructions": "How strong is the first line of variant A as a scroll-stopping hook for the audience?",
+    "criteria": ["generic, could be any product", "clear but flat", "specific and relevant", "specific, relevant, and creates a question the reader wants answered"]
+  },
+  "honest": {"type": "noul", "instructions": "Does variant A make any claim that is not supported by the landing page copy in the state?"},
+  "audience_fit": {"type": "noul", "instructions": "Would the described audience recognise themselves in variant A?"},
+  "cta_clear": {"type": "noul", "instructions": "Is it obvious what happens when someone clicks variant A?"}
+}
